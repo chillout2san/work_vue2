@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    gender: '',
+    gender: '男性',
     year: '',
     month: '',
     day: '',
@@ -13,5 +13,14 @@ export default new Vuex.Store({
     condition: '',
     history: '',
     question:''
+  },
+  mutations: {
+    displayGender(gen) {
+      if(gen === 1){
+        this.state.gender = "男性";
+      }else{
+        this.state.gender = "女性";
+      }
+    }
   }
 });
