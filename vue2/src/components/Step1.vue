@@ -17,7 +17,7 @@
     <div>
       <p>生年月日</p>
       <select>
-        <option v-for="(year, key) in years" v-bind:key="key">{{ year }}</option>
+        <option v-for="(year, key) in years" v-bind:key="key" v-bind:selected="year === '1990年(平成2)'">{{ year }}</option>
       </select>年
 
       <select>
@@ -41,10 +41,22 @@
 export default {
   computed: {
     years: () => {
+      let s = '';
       const presentYear = new Date().getFullYear();
       const array = [];
       for(let i = 1903; i < presentYear + 1; i++){
-        array.push(i);
+        if (i > 2018) { 
+          s = "令和"+(i-2018);
+        } else if(i > 1988){
+          s = "平成"+(i-1988);
+        }else if (i > 1925) {
+          s = "昭和"+(i-1925);
+        } else if (i > 1911) {
+          s = "大正"+(i-1911);
+        } else if (i > 1867) {
+          s = "明治"+(i-1867);
+        }
+        array.push(i + '年' + '(' + s + ')');
       }
       return array
     },
@@ -61,9 +73,6 @@ export default {
       array.push(i);
     }
     return array      
-    },
-    gen: () => {
-      return this.$store.state.gender;
     }
   } 
 }
