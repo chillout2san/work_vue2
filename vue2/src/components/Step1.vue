@@ -12,8 +12,6 @@
       <input type="radio" name="gender">女性
     </div>
 
-    {{ this.$store.state.gender }}
-
     <div>
       <p>生年月日</p>
       <select>
