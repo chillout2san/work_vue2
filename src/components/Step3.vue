@@ -8,26 +8,21 @@
     <div>
       <p>-ご相談内容-</p>
       <textarea cols="50" rows="10"></textarea>
-
     </div>
 
     <div>
       <button><router-link to="/step2">前へ戻る</router-link></button>
       <button>次へ進む</button>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      showSecondQuestion: false,
-      showThirdQuestion: false
-    }
-  }
-}
+    return {};
+  },
+};
 </script>
 
 <style scoped>
