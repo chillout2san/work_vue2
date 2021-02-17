@@ -15,11 +15,32 @@ export default new Vuex.Store({
     question: ''
   },
   mutations: {
-    displayGender(gen) {
-      if (gen === 1) {
-        this.state.gender = '男性';
+    displayGender(state, gen) {
+      if (gen === 0) {
+        state.gender = '男性';
       } else {
-        this.state.gender = '女性';
+        state.gender = '女性';
+      }
+    },
+    displayInsurance(state, alt) {
+      if (alt === 0) {
+        state.insurance = 'はい';
+      } else {
+        state.insurance = 'いいえ';
+      }
+    },
+    displayCondition(state, alt) {
+      if (alt === 0) {
+        state.condition = 'はい';
+      } else {
+        state.condition = 'いいえ';
+      }
+    },
+    displayHistory(state, alt) {
+      if (alt === 0) {
+        state.history = 'はい';
+      } else {
+        state.history = 'いいえ';
       }
     }
   }

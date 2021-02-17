@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Step1 from './components/Step1.vue';
 import Step2 from './components/Step2.vue';
 import Step3 from './components/Step3.vue';
+import Result from './components/Result.vue';
 
 Vue.use(Router);
 
@@ -19,6 +20,10 @@ export default new Router({
     {
       path: '/step3',
       component: Step3
+    },
+    {
+      path: '/result',
+      component: Result
     }
   ]
 });

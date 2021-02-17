@@ -7,8 +7,16 @@
 
     <div>
       <p>性別</p>
-      <input type="radio" name="gender" />男性
-      <input type="radio" name="gender" />女性
+      <input
+        type="radio"
+        name="gender"
+        @click="$store.commit('displayGender', 0)"
+      />男性
+      <input
+        type="radio"
+        name="gender"
+        @click="$store.commit('displayGender', 1)"
+      />女性
     </div>
 
     <div>
@@ -19,7 +27,7 @@
           v-bind:key="key"
           v-bind:selected="year === '1990年(平成2)'"
           >{{ year }}</option
-        > </select
+        ></select
       >年
 
       <select>

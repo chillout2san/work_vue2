@@ -7,12 +7,12 @@
 
     <div>
       <p>-ご相談内容-</p>
-      <textarea cols="50" rows="10"></textarea>
+      <textarea cols="50" rows="10" v-model="$store.state.question"></textarea>
     </div>
 
     <div>
       <button><router-link to="/step2">前へ戻る</router-link></button>
-      <button>次へ進む</button>
+      <button><router-link to="/result">次へ進む</router-link></button>
     </div>
   </div>
 </template>
