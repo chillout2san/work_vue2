@@ -42,15 +42,15 @@
 </template>
 
 <script>
-import { years, monthes, days } from "../helpers/definition";
+import { years, monthes, days } from '../helpers/definition';
 export default {
   data() {
     return {
       years: years,
       monthes: monthes,
-      days: days,
+      days: days
     };
-  },
+  }
 };
 </script>
 
