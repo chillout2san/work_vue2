@@ -10,12 +10,14 @@
       <input
         type="radio"
         name="gender"
-        @click="$store.commit('displayGender', 0)"
+        value="男性"
+        v-model="genderValue"
       />男性
       <input
         type="radio"
         name="gender"
-        @click="$store.commit('displayGender', 1)"
+        value="女性"
+        v-model="genderValue"
       />女性
     </div>
 
@@ -26,6 +28,7 @@
           v-for="(year, key) in years"
           v-bind:key="key"
           v-bind:selected="year === '1990年(平成2)'"
+          :value="year"
           >{{ year }}</option
         ></select
       >年
@@ -43,6 +46,8 @@
       >日
     </div>
 
+    <button @click="log">テスト用ボタン</button>
+
     <div>
       <button><router-link to="/step2">次へ進む</router-link></button>
     </div>
@@ -56,8 +61,15 @@ export default {
     return {
       years: years,
       monthes: monthes,
-      days: days
+      days: days,
+      genderValue: '',
+      yearValue: ''
     };
+  },
+  methods: {
+    log() {
+      console.log(this.genderValue);
+    }
   }
 };
 </script>

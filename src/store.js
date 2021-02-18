@@ -14,6 +14,16 @@ export default new Vuex.Store({
     history: '',
     question: ''
   },
+  getters: {
+    checkGender: state => state.gender,
+    checkYear: state => state.year,
+    checkMonth: state => state.month,
+    checkDay: state => state.day,
+    checkInsurance: state => state.insurance,
+    checkCondition: state => state.condition,
+    checkHistory: state => state.history,
+    checkQuestion: state => state.question
+  },
   mutations: {
     displayGender(state, gen) {
       if (gen === 0) {

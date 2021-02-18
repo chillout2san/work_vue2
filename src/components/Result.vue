@@ -7,7 +7,7 @@
 
     <div>
       <p>性別</p>
-      <p>{{ $store.state.gender }}</p>
+      <p>{{ $store.getters.checkGender }}</p>
     </div>
 
     <div>
@@ -17,26 +17,26 @@
 
     <div>
       <p>現在、生命保険に加入されていますか？</p>
-      <p>{{ $store.state.insurance }}</p>
+      <p>{{ $store.getters.checkInsurance }}</p>
     </div>
 
     <div>
       <p>
         現在入院中ですか。または、最近3か月以内に医師の診療・検査の結果、入院・手術をすすめられたことはありますか。
       </p>
-      <p>{{ $store.state.condition }}</p>
+      <p>{{ $store.getters.checkCondition }}</p>
     </div>
 
     <div>
       <p>
         過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？
       </p>
-      <p>{{ $store.state.history }}</p>
+      <p>{{ $store.getters.checkHistory }}</p>
     </div>
 
     <div>
       <p>ご相談内容</p>
-      <p>{{ $store.state.question }}</p>
+      <p>{{ $store.getters.checkQuestion }}</p>
     </div>
 
     <div>
