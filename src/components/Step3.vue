@@ -7,10 +7,10 @@
 
     <div>
       <p>-ご相談内容-</p>
-      <textarea cols="50" rows="10" v-model="$store.state.question"></textarea>
+      <textarea cols="50" rows="10" v-model="question"></textarea>
     </div>
 
-    <div>
+    <div @click="$store.commit('displayStep3', question)">
       <button><router-link to="/step2">前へ戻る</router-link></button>
       <button><router-link to="/result">次へ進む</router-link></button>
     </div>
@@ -20,7 +20,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      question: ''
+    };
   }
 };
 </script>

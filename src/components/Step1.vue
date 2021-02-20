@@ -23,33 +23,29 @@
 
     <div>
       <p>生年月日</p>
-      <select>
-        <option
-          v-for="(year, key) in years"
-          v-bind:key="key"
-          v-bind:selected="year === '1990年(平成2)'"
-          :value="year"
-          >{{ year }}</option
-        ></select
+      <select v-model="selectedYear">
+        <option v-for="(year, key) in years" :key="key" :value="year">{{
+          year
+        }}</option></select
       >年
 
-      <select>
-        <option v-for="(month, key) in monthes" v-bind:key="key">{{
+      <select v-model="selectedMonth">
+        <option v-for="(month, key) in monthes" :key="key" :value="month">{{
           month
         }}</option> </select
       >月
 
-      <select>
-        <option v-for="(day, key) in days" v-bind:key="key">{{
+      <select v-model="selectedDay">
+        <option v-for="(day, key) in days" :key="key" :value="day">{{
           day
         }}</option> </select
       >日
     </div>
 
-    <button @click="log">テスト用ボタン</button>
-
     <div>
-      <button><router-link to="/step2">次へ進む</router-link></button>
+      <button @click="$store.commit('displayStep1', [genderValue, birthDate])">
+        <router-link to="/step2">次へ進む</router-link>
+      </button>
     </div>
   </div>
 </template>
@@ -63,12 +59,22 @@ export default {
       monthes: monthes,
       days: days,
       genderValue: '',
-      yearValue: ''
+      yearValue: '',
+      selectedYear: '',
+      selectedMonth: '',
+      selectedDay: ''
     };
   },
-  methods: {
-    log() {
-      console.log(this.genderValue);
+  computed: {
+    birthDate: function() {
+      return (
+        this.selectedYear +
+        '年' +
+        this.selectedMonth +
+        '月' +
+        this.selectedDay +
+        '日'
+      );
     }
   }
 };

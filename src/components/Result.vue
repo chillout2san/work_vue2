@@ -12,7 +12,7 @@
 
     <div>
       <p>生年月日</p>
-      <!-- <p>{{ $store.state.gender }}</p> -->
+      <p>{{ $store.getters.checkDate }}</p>
     </div>
 
     <div>
