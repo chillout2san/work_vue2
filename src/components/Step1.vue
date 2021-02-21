@@ -24,21 +24,21 @@
     <div>
       <p>生年月日</p>
       <select v-model="selectedYear">
-        <option v-for="(year, key) in years" :key="key" :value="year">{{
-          year
-        }}</option></select
+        <option v-for="(year, key) in years" :key="key" :value="year">
+          {{ year }}
+        </option></select
       >年
 
       <select v-model="selectedMonth">
-        <option v-for="(month, key) in monthes" :key="key" :value="month">{{
-          month
-        }}</option> </select
+        <option v-for="(month, key) in monthes" :key="key" :value="month">
+          {{ month }}
+        </option></select
       >月
 
       <select v-model="selectedDay">
-        <option v-for="(day, key) in days" :key="key" :value="day">{{
-          day
-        }}</option> </select
+        <option v-for="(day, key) in days" :key="key" :value="day">
+          {{ day }}
+        </option></select
       >日
     </div>
 
@@ -66,7 +66,7 @@ export default {
     };
   },
   computed: {
-    birthDate: function() {
+    birthDate: function () {
       return (
         this.selectedYear +
         '年' +
